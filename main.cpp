@@ -47,6 +47,6 @@ int main(){
 		getline(cin, s);
 		if(s == "")
 			break;
-		detector.CheckSpam(tokenizer.TokenizeString(s), true);
+		detector.CheckSpam(tokenizer.Tokenize(s), true);
 	}
 }

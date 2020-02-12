@@ -7,13 +7,13 @@
 using namespace std;
 
 class WordTokenizer{
-public:
 	bool IsDigit(char c);
 	bool IsLetter(char c);
 	char ToLower(char c);
 	bool IsLetterOrDigit(char c);
-	vector<string> TokenizeS(istream &f);
-	vector<string> TokenizeString(string s);
+public:
+	vector<string> Tokenize(istream &f);
+	vector<string> Tokenize(string s);
 };
 
 bool WordTokenizer::IsDigit(char c){
@@ -37,7 +37,7 @@ bool WordTokenizer::IsLetterOrDigit(char c){
 	return IsDigit(c) || IsLetter(c);
 }
 
-vector<string> WordTokenizer::TokenizeS(istream &f){
+vector<string> WordTokenizer::Tokenize(istream &f){
 	vector<string> words;
 	char c = f.get();
 	
@@ -58,7 +58,7 @@ vector<string> WordTokenizer::TokenizeS(istream &f){
 	return words;
 }
 
-vector<string> WordTokenizer::TokenizeString(string str){
+vector<string> WordTokenizer::Tokenize(string str){
 	vector<string> words;
 	int i = 0;
 
