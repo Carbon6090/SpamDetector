@@ -106,8 +106,8 @@ bool SpamDetector::CheckSpam(const vector<string>& tokens, bool verbose){
 	ham /= sum;
 	spam /= sum;
 	if (verbose){
-		cout << "P(spam)" << spam << endl;
-		cout << "P(ham)" << ham << endl;
+		cout << "P(spam)" << " " << spam << endl;
+		cout << "P(ham)" << " " << ham << endl;
 	}
 	return spam > 0.5;
 }

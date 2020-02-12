@@ -36,13 +36,14 @@ void Evaluate(string trainPath, string testPath) {
 }
 
 int main(){
+	Evaluate("data/train.csv", "data/test.csv");
 	setlocale(LC_ALL, "russian"); 
 	string s;
 	WordTokenizer tokenizer;
 	SpamDetector detector;
-	Evaluate("data/train.csv", "data/test.csv");
+	detector.ReadTexts("data/all.csv");
 	while (true){
-		cout << "<";
+		cout << ">";
 		getline(cin, s);
 		if(s == "")
 			break;
