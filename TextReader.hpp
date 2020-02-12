@@ -26,7 +26,7 @@ vector<Text> TextReader::ReadTexts(istream &f){
 		stringstream ss(line);
 		string label;
 		ss >> label;
-		vector<string> text = tokenizer.Tokenize(ss);
+		vector<string> text = tokenizer.TokenizeS(ss);
 		texts.push_back({label, text});
 	}
 

@@ -12,7 +12,8 @@ public:
 	bool IsLetter(char c);
 	char ToLower(char c);
 	bool IsLetterOrDigit(char c);
-	vector<string> Tokenize(istream &f);
+	vector<string> TokenizeS(istream &f);
+	vector<string> TokenizeString(string s);
 };
 
 bool WordTokenizer::IsDigit(char c){
@@ -36,7 +37,7 @@ bool WordTokenizer::IsLetterOrDigit(char c){
 	return IsDigit(c) || IsLetter(c);
 }
 
-vector<string> WordTokenizer::Tokenize(istream &f){
+vector<string> WordTokenizer::TokenizeS(istream &f){
 	vector<string> words;
 	char c = f.get();
 	
@@ -54,5 +55,27 @@ vector<string> WordTokenizer::Tokenize(istream &f){
 		if(word != "")
 			words.push_back(word);
 	}
+	return words;
+}
+
+vector<string> WordTokenizer::TokenizeString(string str){
+	vector<string> words;
+	int i = 0;
+
+	while (i < str.length()){
+		while ((i < str.length()) && !IsLetterOrDigit(str[i]))
+			i++; 
+
+		string word = "";
+
+		while ((i < str.length()) && (IsLetterOrDigit(str[i]))){;
+			word += ToLower(str[i]); 
+			i++;
+		}
+		
+		if(word != "")
+			words.push_back(word);
+	}
+
 	return words;
 }

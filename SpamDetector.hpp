@@ -24,7 +24,6 @@ class SpamDetector{
 	map<string, int> MakeDictionary(string label = "");
 	double GetScore(string label, const vector<string>& tokens);
 public:
-	//void Read(vector<string> vec);
 	void ReadTexts(const string& path);
 	void ShowStat();
 	bool CheckSpam(const vector<string>& tokens, bool verbose);
@@ -41,10 +40,6 @@ double SpamDetector::GetScore(string label, const vector<string>& tokens){
 
 	return score;
 }
-
-/*void SpamDetector::Read(vector<string> vec){
-	texts = vec;
-}*/
 
 map<string, int> SpamDetector::MakeDictionary(string label){
 	map<string, int> dict;
